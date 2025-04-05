@@ -1,29 +1,30 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 
-dotenv.config({ path: ".env" });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-const db = new Sequelize(
-  process.env.DB_NAME as string,
-  process.env.DB_USER as string,
-  process.env.DB_PASS as string,
+dotenv.config({ path: join(__dirname, "../../..", ".env") });
+
+export const db = new Sequelize(
+  process.env.DB_NAME || "pokedex",
+  process.env.DB_USER || "root",
+  process.env.DB_PASS || "",
   {
-    host: process.env.DB_HOST,
-    dialect: "mariadb",
-    port: Number(process.env.DB_PORT as string),
+    host: process.env.DB_HOST || "localhost",
+    dialect: "mysql",
     logging: false,
-    pool: { max: 100, min: 0, idle: 10000 },
   }
 );
 
-const connectToDatabase = async () => {
-  try {    
+export const connectToDatabase = async (): Promise<void> => {
+  try {
     await db.authenticate();
-    await db.sync();
-    console.log("Conexión correcta a la base de datos");
+    console.log("Connection has been established successfully.");
   } catch (error) {
-    console.log(error);
+    console.error("Unable to connect to the database:", error);
+    throw error;
   }
 };
-
-export { db, connectToDatabase };

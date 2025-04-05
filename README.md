@@ -1,3 +1,78 @@
+# Pokedex Challenge
+
+Una aplicación web para gestionar una Pokédex, desarrollada con React, Node.js y MySQL.
+
+## Características
+
+- Lista de los 25 Pokémon más pesados
+- Creación de nuevos Pokémon
+- Interfaz de usuario moderna y responsiva
+- Base de datos MySQL con Sequelize
+- API RESTful
+
+## Tecnologías utilizadas
+
+- Frontend:
+  - React
+  - TypeScript
+  - Redux
+  - Tailwind CSS
+
+- Backend:
+  - Node.js
+  - Express
+  - TypeScript
+  - MySQL
+  - Sequelize
+
+## Instalación
+
+1. Clonar el repositorio:
+```bash
+git clone https://github.com/tu-usuario/pokedex-challenge.git
+```
+
+2. Configurar el backend:
+```bash
+cd backend
+npm install
+```
+
+3. Configurar el frontend:
+```bash
+cd frontend
+npm install
+```
+
+4. Configurar la base de datos:
+- Crear una base de datos MySQL llamada `pokedex`
+- Importar el archivo `pokedex.sql`
+- Configurar el archivo `.env` en el backend
+
+5. Iniciar los servidores:
+```bash
+# En una terminal
+cd backend
+npm run dev
+
+# En otra terminal
+cd frontend
+npm run dev
+```
+
+## Uso
+
+- La aplicación estará disponible en `http://localhost:5173`
+- El backend estará disponible en `http://localhost:7768`
+
+## Contribución
+
+Las contribuciones son bienvenidas. Por favor, abre un issue para discutir los cambios propuestos.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT.
+
 ¡Hola joven entrenador!
 
 Llegas pronto, soy el profesor Oak, y como vas a iniciar tu aventura Pokemon tengo que darte un Pokemon para que inicies tu aventura... pero por un motivo que desconozco no puedo ver mi listado de Pokemon, ni tampoco registrar nuevos Pokemon en la Pokedex y ¡tengo que abrir el laboratorio en 2 hora!
@@ -20,7 +95,7 @@ Usando todas las buenas prácticas de programador que conozcas, tienes como prim
 
 Solo muéstrame los 25 más pesados.
 
-Además, me guardarás estos en un “reducer”. (redux)
+Además, me guardarás estos en un "reducer". (redux)
 
 La tabla puede tener el formato que quieras, pero tienes que mostrar todos los datos
 
@@ -50,7 +125,7 @@ El backend está implementado con Express y debes recuperar e insertar datos en 
 
 Verás algún ejemplo de rutas y controladores en el backend.
 
-Recuerda que debes utilizar buenas prácticas: No utilizar ‘any’, estructurar código, tipar correctamente, etc. 
+Recuerda que debes utilizar buenas prácticas: No utilizar 'any', estructurar código, tipar correctamente, etc. 
 
 Para ejecutar tanto el front como el back: <code>npm run dev</code> dentro de sus respectivas carpetas.
 
