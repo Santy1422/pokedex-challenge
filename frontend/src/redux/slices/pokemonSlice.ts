@@ -26,7 +26,7 @@ const initialState: PokemonState = {
 export const fetchHeaviestPokemon = createAsyncThunk(
   'pokemon/fetchHeaviest',
   async () => {
-    const response = await axios.get('http://localhost:7768/api/pokemon');
+    const response = await axios.get('http://localhost:8080/api/pokemon');
     return response.data;
   }
 );
@@ -34,8 +34,7 @@ export const fetchHeaviestPokemon = createAsyncThunk(
 export const createNewPokemon = createAsyncThunk(
   'pokemon/create',
   async (pokemonData: Omit<Pokemon, 'id'>, { dispatch }) => {
-    const response = await axios.post('http://localhost:7768/api/pokemon', pokemonData);
-    // Después de crear el Pokémon, obtenemos la lista actualizada
+    const response = await axios.post('http://localhost:8080/api/pokemon', pokemonData);
     await dispatch(fetchHeaviestPokemon());
     return response.data;
   }
